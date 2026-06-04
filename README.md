@@ -1,10 +1,15 @@
 <p align="center">
-  <img src="logo.png" alt="AART logo" width="200">
+  <img src="assets/logo.png" alt="AART logo" width="200">
 </p>
 
 # AART: Anchor-Aware Residual Translator
 
 Cross-platform proteomics imputation between Olink, SomaScan, and Mass Spectrometry platforms.
+
+## Documentation
+
+- [AART Method](assets/AART_method.pdf) — Technical details of the AART method
+- [Study Design](assets/study_design.pdf) — Study design and cohort overview
 
 ## Overview
 
@@ -35,7 +40,8 @@ pip install -e .
 ## Project Structure
 
 ```
-├── src/models/aart/       # Core AART model implementation
+├── assets/                 # Logo, method PDF, study design PDF
+├── src/models/aart/        # Core AART model implementation
 ├── src/utils/              # Shared utilities (config, metrics, preprocessing)
 ├── configs/aart/           # Configs per platform pair
 ├── scripts/

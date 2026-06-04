@@ -1,0 +1,27 @@
+# CKB: Olink → SomaScan imputation (reverse direction)
+# The pipeline treats "soma" as input (X) and "olink" as target (Y),
+# so we swap the file assignments to reverse the direction.
+# Annotation: Wang et al. 2025 Supplementary Data 1 (UniProt-based mapping)
+paths:
+  data_dir: data/CKB
+  source_input: olink_overlap.csv
+  source_target: somascan_overlap.csv
+  train_soma: data/CKB/olink_overlap_train.csv
+  test_soma: data/CKB/olink_overlap_test.csv
+  train_olink: data/CKB/somascan_overlap_train.csv
+  test_olink: data/CKB/somascan_overlap_test.csv
+  annotation: data/CKB/somascan_annotation_cache.csv
+annotation:
+  source: excel
+  file: 41467_2025_56935_MOESM4_ESM.xlsx
+split:
+  id_column: csid
+  random_state: 42
+  test_size: 0.2
+  val_size: 0.1
+baseline_grid:
+  anchor_alpha_single: [0.01, 0.1, 1.0]
+  anchor_alpha_multi: [0.1, 1.0, 10.0]
+  residual_alpha: [10.0, 30.0, 100.0, 300.0]
+  n_components: [64, 128, 256]
+  gate_lambda: [0.1, 1.0, 10.0]

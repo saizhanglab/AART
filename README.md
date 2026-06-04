@@ -26,15 +26,11 @@ pip install -e .
 
 ## Supported Platform Pairs
 
-| Direction | Cohort | Config | Annotation source |
-|-----------|--------|--------|-------------------|
-| SomaScan → Olink | CKB (n=3,975) | `configs/aart/soma_to_olink.yaml` | Wang et al. 2025 Excel (UniProt mapping) |
-| Olink → SomaScan | CKB (n=3,975) | `configs/aart/olink_to_soma.yaml` | Wang et al. 2025 Excel (UniProt mapping) |
-| MS → Olink | PEX-LC (n=88) | `configs/aart/ms_to_olink.yaml` | MS feature metadata (gene symbols) |
-| MS → SomaScan | GNPC | `configs/aart/ms_to_soma.yaml` | MS feature metadata (gene symbols) |
-
-Each platform pair requires a different **annotation table** that maps probe IDs to gene symbols.
-The `stage_data_aart.py` script builds this automatically from the appropriate source (Excel or feature metadata CSV).
+| Platform Pair | Cohort | Config |
+|---------------|--------|--------|
+| SomaScan ↔ Olink | CKB (n=3,975) | `configs/aart/soma_to_olink.yaml` / `olink_to_soma.yaml` |
+| MS ↔ Olink | PEX-LC (n=88) | `configs/aart/ms_to_olink.yaml` |
+| MS ↔ SomaScan | GNPC | `configs/aart/ms_to_soma.yaml` |
 
 ## Project Structure
 

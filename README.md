@@ -6,18 +6,13 @@
 
 Cross-platform proteomics imputation between Olink, SomaScan, and Mass Spectrometry platforms.
 
-## Documentation
-
-- [AART Method](assets/AART_method.pdf) — Technical details of the AART method
-- [Study Design](assets/study_design.pdf) — Study design and cohort overview
-
 ## Overview
 
 AART is a hybrid method for mapping between plasma proteomics assays. It combines:
 
-- **Anchor branch**: Per-protein Ridge regression on biologically mapped aptamer-protein pairs
-- **Residual branch**: Global PCA + Ridge model capturing platform-wide patterns
-- **Reliability gate**: Closed-form per-protein weighting between anchor and residual predictions
+1. **Local Anchor Component**: Per-protein Ridge regression on biologically mapped protein pairs between source and target platforms, using only highly correlated anchors
+2. **Global Residual Component**: PCA + Ridge model on the residuals, capturing platform-wide patterns not explained by direct anchors
+3. **Reliability-Aware Fusion**: Closed-form per-protein weighting that combines anchor and residual predictions based on each anchor's reliability
 
 All components use scikit-learn (Ridge, PCA) — no deep learning dependencies required.
 
@@ -29,6 +24,12 @@ pip install -e .
 
 **Requirements**: Python >= 3.10, scikit-learn >= 1.3
 
+## Study Design
+
+<p align="center">
+  <img src="assets/study_design.png" alt="Study design" width="700">
+</p>
+
 ## Supported Platform Pairs
 
 | Platform Pair | Cohort | Config |
@@ -36,6 +37,12 @@ pip install -e .
 | SomaScan ↔ Olink | CKB (n=3,975) | `configs/aart/soma_to_olink.yaml` / `olink_to_soma.yaml` |
 | MS ↔ Olink | PEX-LC (n=88) | `configs/aart/ms_to_olink.yaml` |
 | MS ↔ SomaScan | GNPC | `configs/aart/ms_to_soma.yaml` |
+
+## Method
+
+<p align="center">
+  <img src="assets/AART_method.png" alt="AART method overview" width="600">
+</p>
 
 ## Project Structure
 

@@ -13,6 +13,9 @@ tutorial/outputs/
 *.pth
 *.ckpt
 
+# PDFs
+*.pdf
+
 # Python
 __pycache__/
 *.pyc

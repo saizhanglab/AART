@@ -107,15 +107,16 @@ Step-by-step Jupyter notebooks in [`tutorial/`](tutorial/):
 2. **[02_evaluate_and_compare.ipynb](tutorial/02_evaluate_and_compare.ipynb)** — Per-protein and per-sample evaluation, comparison to Direct 1-to-1 mapping
 
 See [`data/CKB/README.md`](data/CKB/README.md) for data download instructions.
+If you have any questions, please feel free to contact Yurui Chen (yurui.chen@yale.edu).
 
 ## Citation
 
 If you use AART in your research, please cite:
 
 ```
-[Citation to be added upon publication]
+
 ```
 
 ## License
 
-[License to be specified]
+AART is licensed under the MIT License.

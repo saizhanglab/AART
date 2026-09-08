@@ -4,7 +4,7 @@
 
 # AART: Anchor-Aware Residual Translator
 
-Cross-platform proteomics imputation between Olink, SomaScan, and Mass Spectrometry platforms.
+Cross-platform proteomics translation between Olink, SomaScan, and Mass Spectrometry platforms.
 
 ## Overview
 
@@ -111,7 +111,7 @@ If you have any questions, please feel free to contact Yurui Chen (yurui.chen@ya
 
 ## Citation
 
-If you use AART in your research, please cite:
+If you use AART in your research, please cite: 10.64898/2026.06.29.735313v1
 
 ```
 
